@@ -1,6 +1,6 @@
 FROM alpine:latest
 RUN apk add --no-cache openjdk8-jre
-ENV JAVA_HOME=/usr/bin/java
+ENV JAVA_HOME=/usr/bin
 ENV PATH=$PATH:$JAVA_HOME
 RUN apk add --no-cache wget && \
     cd /home && \
