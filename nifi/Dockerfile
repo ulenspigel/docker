@@ -1,6 +1,6 @@
 FROM alpine:latest
 RUN apk add --no-cache openjdk8-jre
-ENV JAVA_HOME=/usr/bin
+ENV JAVA_HOME=/usr
 ENV PATH=$PATH:$JAVA_HOME
 RUN apk add --no-cache wget && \
     cd /home && \
@@ -8,5 +8,5 @@ RUN apk add --no-cache wget && \
     rm /home/nifi-1.1.2-bin.tar.gz && \	
 	apk del wget
 EXPOSE 8080
-ENTRYPOINT ["sh","/home/nifi-1.1.2/bin/nifi.sh","start"]
+ENTRYPOINT ["sh","/home/nifi-1.1.2/bin/nifi.sh","run"]
 CMD ["/bin/sh"]
