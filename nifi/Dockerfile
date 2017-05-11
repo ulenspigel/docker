@@ -1,6 +1,7 @@
 FROM alpine:latest
 RUN apk add --no-cache openjdk8-jre
-ENV PATH=$PATH:/usr/bin/java
+ENV JAVA_HOME=/usr/bin/java
+ENV PATH=$PATH:$JAVA_HOME
 RUN apk add --no-cache wget && \
     cd /home && \
 	wget "http://mirrors.m247.ro/apache/nifi/1.1.2/nifi-1.1.2-bin.tar.gz" && tar -xzf nifi-1.1.2-bin.tar.gz -C /home/ && \
