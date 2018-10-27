@@ -4,9 +4,9 @@ ENV JAVA_HOME=/usr
 ENV PATH=$PATH:$JAVA_HOME
 RUN apk add --no-cache wget && \
     cd /home && \
-	wget "http://mirrors.m247.ro/apache/nifi/1.1.2/nifi-1.1.2-bin.tar.gz" && tar -xzf nifi-1.1.2-bin.tar.gz -C /home/ && \
-    rm /home/nifi-1.1.2-bin.tar.gz && \	
+	wget "http://apache.40b.nl/nifi/1.8.0/nifi-1.8.0-bin.tar.gz" && tar -xzf nifi-1.8.0-bin.tar.gz -C /home/ && \
+    rm /home/nifi-1.8.0-bin.tar.gz && \
 	apk del wget
 EXPOSE 8080
-ENTRYPOINT ["sh","/home/nifi-1.1.2/bin/nifi.sh","run"]
+ENTRYPOINT ["sh","/home/nifi-1.8.0/bin/nifi.sh","run"]
 CMD ["/bin/sh"]
