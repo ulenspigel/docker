@@ -10,6 +10,6 @@ RUN apk add --no-cache wget && \
     tar -xzf $ACTIVEMQ_FILE -C /home/ && \
     rm /home/$ACTIVEMQ_FILE && \
 	apk del wget
-EXPOSE 8161
+EXPOSE 8161 61616
 ENTRYPOINT /home/$ACTIVEMQ_NAME/bin/activemq start && tail -f /dev/null
 CMD ["/bin/sh"]
